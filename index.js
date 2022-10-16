@@ -1,8 +1,11 @@
 const port = 3000
 const express = require('express')
 const app = express()
+const cors = require('cors');
 
 app.use(express.json())
+app.use(cors());
+app.options('*', cors());
 
 // Routing
 const sample = require('./api/sample')
